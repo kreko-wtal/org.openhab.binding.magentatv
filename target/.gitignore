@@ -1,1 +1,5 @@
 /classes/
+/MANIFEST.MF
+/local-artifacts.properties
+/p2artifacts.xml
+/p2content.xml

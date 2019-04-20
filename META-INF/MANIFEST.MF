@@ -9,6 +9,12 @@ Bundle-SymbolicName: org.openhab.binding.magentatv;singleton:=true
 Bundle-Vendor: openHAB
 Bundle-Version: 2.5.0.qualifier
 Import-Package: 
+ com.google.gson,
+ javax.servlet,
+ javax.servlet.http,
+ org.apache.commons.lang,
+ org.apache.commons.net,
+ org.apache.commons.net.util,
  org.eclipse.jdt.annotation;resolution:=optional,
  org.eclipse.smarthome.config.core,
  org.eclipse.smarthome.core.library.types,
@@ -18,5 +24,16 @@ Import-Package:
  org.eclipse.smarthome.core.thing.type,
  org.eclipse.smarthome.core.types,
  org.eclipse.smarthome.core.util,
+ org.eclipse.smarthome.core.net,
+ org.eclipse.smarthome.config.discovery,
+ org.eclipse.smarthome.config.discovery.upnp,
+ org.eclipse.smarthome.io.net.http,
+ org.eclipse.smarthome.io.transport.upnp,
+ org.jupnp.model.meta,
+ org.jupnp.model.types,
+ org.osgi.framework,
+ org.osgi.service.cm,
+ org.osgi.service.component,
+ org.osgi.service.http,
  org.slf4j
 Service-Component: OSGI-INF/*.xml
