@@ -11,6 +11,8 @@ The binding has been tested with the EntertainTV service as well as the new Mage
 
 This include device discovery, sending keys from the remote and also receiving program events.
 
+This binding replaces the former versions EntertainTV and TelekomTV bindings.
+
 ---
 
 Please check out https://community.openhab.org/t/magentatv-entertaintv-binding-for-deutsche-telekom-mr-3xx-and-4xx and discuss your ideas, requests and technical problems with the community.
