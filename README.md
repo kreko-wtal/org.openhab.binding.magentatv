@@ -71,9 +71,7 @@ For now the binding selects the first matching network interface, which is not a
 | Parameter |Description |
 | ----------| -------------------------------------------------------------------- |
 | udn | UPnP Unique Device Name - a hexadecimal ID, which includes the 12 digit MAC address at the end (parsed by the binding to get the receiver's MAC) |
-| modelId | Type of Media Receiver:
-MS_TPB: MR400, MR200
-MR401B: MR401B, MR201 |
+| modelId | Type of Media Receiver: DMS_TPB for MR400 amd MR200 ; MR401B for MR401B and MR201 |
 | ipAddress | IP address of the receiver, usually discovered by UPnP |
 | port | Port to reach the remote service, usually 8081 for the MR401/MR201 or 49152 for MR400/200 |
 | accountName | T-Online account name, should be the registered e-mail address |
