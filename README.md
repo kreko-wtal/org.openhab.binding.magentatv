@@ -15,7 +15,7 @@ This binding replaces the former versions EntertainTV and TelekomTV bindings.
 
 ---
 
-Please check out https://community.openhab.org/t/magentatv-entertaintv-binding-for-deutsche-telekom-mr-3xx-and-4xx and discuss your ideas, requests and technical problems with the community.
+Please check out the [openHAB community thread](https://community.openhab.org/t/magentatv-entertaintv-binding-for-deutsche-telekom-mr-3xx-and-4xx) and discuss your ideas, requests and technical problems with the community.
 
 ---
 
@@ -71,7 +71,9 @@ For now the binding selects the first matching network interface, which is not a
 | Parameter |Description |
 | ----------| -------------------------------------------------------------------- |
 | udn | UPnP Unique Device Name - a hexadecimal ID, which includes the 12 digit MAC address at the end (parsed by the binding to get the receiver's MAC) |
-| modelId | Type of Media Receiver:<br>DMS_TPB: MR400, MR200<br>MR401B: MR401B, MR201 |
+| modelId | Type of Media Receiver:
+MS_TPB: MR400, MR200
+MR401B: MR401B, MR201 |
 | ipAddress | IP address of the receiver, usually discovered by UPnP |
 | port | Port to reach the remote service, usually 8081 for the MR401/MR201 or 49152 for MR400/200 |
 | accountName | T-Online account name, should be the registered e-mail address |
@@ -143,7 +145,7 @@ Channels receiving event information when changing the channel or playing a vide
 | PAIR | Re-pair with the receiver |
 
 In addition you could send any key code in the 0xHHHH format., refer to
-<a href="http://support.huawei.com/hedex/pages/DOC1100366313CEH0713H/01/DOC1100366313CEH0713H/01/resources/dsv_hdx_idp/DSV/en/en-us_topic_0094619112.html">Key Codes for Magenta/Huawei Media Receiver</a>
+[Key Codes for Magenta/Huawei Media Receiver](http://support.huawei.com/hedex/pages/DOC1100366313CEH0713H/01/DOC1100366313CEH0713H/01/resources/dsv_hdx_idp/DSV/en/en-us_topic_0094619112.html)
 
 
 ## Full Configuraton Example
@@ -164,26 +166,26 @@ accountPassword="xxxxxxxxxx"
 ### magentatv.items
 
 ```
-# MagentaTV Control</b><br>
-Switch MagentaTV_Power        "Power"        {channel="magentatv:receiver:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:control#power"}<br>
-Switch MagentaTV_ChannelUp    "Channel +"    {channel="magentatv:receiver:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:control#channelUp"}<br>
-Switch MagentaTV_ChannelDown  "Channel -"    {channel="magentatv:receiver:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:control#channelDown"}<br>
-Switch MagentaTV_VolumeUp     "Volume +"     {channel="magentatv:receiver:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:control#volumeUp"}<br>
-Switch MagentaTV_VolumeDown   "Volume -"     {channel="magentatv:receiver:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:control#volumeDown"}<br>
-String MagentaTV_Key          "Key"          {channel="magentatv:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:control#key"}<br>
+# MagentaTV Control
+Switch MagentaTV_Power        "Power"        {channel="magentatv:receiver:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:control#power"}
+Switch MagentaTV_ChannelUp    "Channel +"    {channel="magentatv:receiver:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:control#channelUp"}
+Switch MagentaTV_ChannelDown  "Channel -"    {channel="magentatv:receiver:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:control#channelDown"}
+Switch MagentaTV_VolumeUp     "Volume +"     {channel="magentatv:receiver:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:control#volumeUp"}
+Switch MagentaTV_VolumeDown   "Volume -"     {channel="magentatv:receiver:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:control#volumeDown"}
+String MagentaTV_Key          "Key"          {channel="magentatv:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:control#key"}
 
-# MagentaTV Program Information</b><br>
-String MagentaTV_ProgTitle   "Program Title" {channel="magentatv:receiver:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:program#programTitle"}<br>
-String MagentaTV_ProgDescr   "Description"   {channel="magentatv:receiver:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:program#programText"}<br>
-String MagentaTV_ProgStart   "Start Time"    {channel="magentatv:receiver:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:program#programStart"}<br>
-String MagentaTV_ProgDur     "Duration"      {channel="magentatv:receiver:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:program#programDuration"}<br>
-String MagentaTV_ProgPos     "Position"      {channel="magentatv:receiver:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:program#programPosition"}<br>
+# MagentaTV Program Information
+String MagentaTV_ProgTitle   "Program Title" {channel="magentatv:receiver:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:program#programTitle"}
+String MagentaTV_ProgDescr   "Description"   {channel="magentatv:receiver:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:program#programText"}
+String MagentaTV_ProgStart   "Start Time"    {channel="magentatv:receiver:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:program#programStart"}
+String MagentaTV_ProgDur     "Duration"      {channel="magentatv:receiver:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:program#programDuration"}
+String MagentaTV_ProgPos     "Position"      {channel="magentatv:receiver:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:program#programPosition"}
 
-# MagentaTV Play Status</b><br>
-Number MagentaTV_Channel   "Channel"         {channel="magentatv:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:status#channel"}<br>
-Number MagentaTV_ChCode    "Channel Code"    {channel="magentatv:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:status#channelCode"}<br>
-String MagentaTV_PlayMode  "Play Mode"       {channel="magentatv:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:status#playMode"}<br>
-String MagentaTV_RunStatus "Run Status"      {channel="magentatv:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:status#runStatus"}<br>
+# MagentaTV Play Status
+Number MagentaTV_Channel   "Channel"         {channel="magentatv:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:status#channel"}
+Number MagentaTV_ChCode    "Channel Code"    {channel="magentatv:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:status#channelCode"}
+String MagentaTV_PlayMode  "Play Mode"       {channel="magentatv:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:status#playMode"}
+String MagentaTV_RunStatus "Run Status"      {channel="magentatv:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:status#runStatus"}
 ```
 
 ### sitemap
