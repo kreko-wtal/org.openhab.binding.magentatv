@@ -2,7 +2,7 @@
 
 ---
 
-## Release: 2.5-pre4
+## Release: 2.5-pre5
 
 This Binding allows controlling the Deutsche Telekom Magenta TV receiver series Media Receiver MR4xx and MR2xx (Telekom NGTV / Huawei Envision platform). 
 The Binding does NOT support MR3xx/1xx (old Entertain system based on Microsoft technology)!
