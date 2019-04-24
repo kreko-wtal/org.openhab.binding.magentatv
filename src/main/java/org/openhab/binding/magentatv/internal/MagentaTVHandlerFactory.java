@@ -319,7 +319,7 @@ public class MagentaTVHandlerFactory extends BaseThingHandlerFactory {
             }
             logger.fatal("Received event for unregistered MR MAC address {0}, JSON={1}", mrMac);
         } catch (Exception e) {
-            logger.exception(e, "Unable to process MR event!");
+            logger.exception(e, "Unable to process MR event! json={0}", jsonEvent);
         }
         return false;
     }

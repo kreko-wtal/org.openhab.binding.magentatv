@@ -91,7 +91,7 @@ public class MagentaTVHttp {
             logger.trace("POST {0} - SoapAction={1}, Data = {2}", url, postData, soapAction);
             InputStream dataStream = new ByteArrayInputStream(postData.getBytes(Charset.forName("UTF-8")));
             httpResponse = HttpUtil.executeUrl(HTTP_POST, url, httpHeader, dataStream, null, NETWORK_TIMEOUT);
-            logger.trace("POST {0} - Response = {1}", HTTP_POST, url, httpResponse);
+            logger.trace("POST {0} - Response = {1}", url, httpResponse);
             return httpResponse;
         } catch (IOException e) {
             throw new MagentaTVException(e, "HTTP POST {0} failed: {1}, response={2}", url, e.getMessage(),

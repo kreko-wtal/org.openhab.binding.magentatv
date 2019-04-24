@@ -422,6 +422,12 @@ public class MagentaTVHandler extends BaseThingHandler implements MagentaTVListe
             }
         } else if (jsonEvent.contains("new_play_mode")) {
             MRPayEvent event = gson.fromJson(jsonEvent, MRPayEvent.class);
+            if (event.duration == null) {
+                event.duration = -1;
+            }
+            if (event.playPostion == null) {
+                event.playPostion = -1;
+            }
             logger.debug("STB event playContent: playMode={0}, duration={1}, playPosition={2}",
                     control.getPlayStatus(event.new_play_mode), event.duration.toString(),
                     event.playPostion.toString());
