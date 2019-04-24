@@ -61,7 +61,6 @@ Once the thing will be added from the Inbox in PaperUI you'll need your T-Online
 | ---------------- | ------------------------------------------------ |
 | Account Name     | Your T-Online user id, e.g. test7017@t-online.de |
 | Account Password | The password for your Telekom account.           |
-```
 
 For security reasons the credentials will be automatically deleted from the thing configuration (replaced with '***' in the thing config) after the initial authentication process. The openHAB instance needs access to the Internet to perform that operation, which can be disabled afterwards.
 
