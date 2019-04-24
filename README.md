@@ -1,4 +1,4 @@
-# MagentaTV Binding (aka Entertain TV)
+# MagentaTV Binding (aka TelekomTV aka EntertainTV)
 
 ---
 
@@ -32,9 +32,13 @@ Please check out the [openHAB community thread](https://community.openhab.org/t/
 ### Receiver Standby Mode
 
 The Media receiver has 3 different standby modes, which could be selected in the receiver's settings.
-Standby - full standby, receiver active all the time
-Suspend/Resume - The receiver goes to sleep mode, but could be awaked by a Wake-on-LAN packet
-Shutdown - Powering off will shutdown the receiver, can be awaked only with the power button
+- Standby - full standby, receiver active all the time
+- Suspend/Resume - The receiver goes to sleep mode, but could be awaked by a Wake-on-LAN packet
+- Shutdown - Powering off will shutdown the receiver, can be awaked only with the power button
+
+Standby provides the best results, because the binding could wakeup the receiver (Power On/Off). Suspend/Resume would require a Wake-on-LAN, which could be done, but is currently not implemented. Shutdown turns the receiver off, which requires a manual PowerOn.
+
+There is no way to detect the "display status" of the receiver. The binding detects PowerOff with the MR401B/MR201 by listening to UPnP events, but can't verify the status when started. You need to take care on the current status if you power on/off the receiver from scenes. Check the current status before sending the POWER button, because POWER is a toggle, not ON or OFF (see sample rules).
 
 ### Supported Things
 
@@ -53,9 +57,10 @@ The auto discovery starts when the binding is loaded. UPnP will be used to disco
 
 Once the thing will be added from the Inbox in PaperUI you'll need your T-Online credentials to query the userID. Open the thing configuration and enter the credentials:
 
-```
-Account Name    : you T-Online user id, e.g. test7017@t-online.de
-Account Password: the password for your Telekom account. 
+| Field            | Description                                      |
+| ---------------- | ------------------------------------------------ |
+| Account Name     | Your T-Online user id, e.g. test7017@t-online.de |
+| Account Password | The password for your Telekom account.           |
 ```
 
 For security reasons the credentials will be automatically deleted from the thing configuration (replaced with '***' in the thing config) after the initial authentication process. The openHAB instance needs access to the Internet to perform that operation, which can be disabled afterwards.
