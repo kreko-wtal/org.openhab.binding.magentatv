@@ -170,7 +170,7 @@ Switch MagentaTV_ChannelUp    "Channel +"    {channel="magentatv:receiver:xxxxxx
 Switch MagentaTV_ChannelDown  "Channel -"    {channel="magentatv:receiver:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:control#channelDown"}
 Switch MagentaTV_VolumeUp     "Volume +"     {channel="magentatv:receiver:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:control#volumeUp"}
 Switch MagentaTV_VolumeDown   "Volume -"     {channel="magentatv:receiver:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:control#volumeDown"}
-String MagentaTV_Key          "Key"          {channel="magentatv:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:control#key"}
+String MagentaTV_Key          "Key"          {channel="magentatv:receiver:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:control#key"}
 
 # MagentaTV Program Information
 String MagentaTV_ProgTitle   "Program Title" {channel="magentatv:receiver:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:program#programTitle"}
@@ -180,10 +180,10 @@ String MagentaTV_ProgDur     "Duration"      {channel="magentatv:receiver:xxxxxx
 String MagentaTV_ProgPos     "Position"      {channel="magentatv:receiver:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:program#programPosition"}
 
 # MagentaTV Play Status
-Number MagentaTV_Channel   "Channel"         {channel="magentatv:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:status#channel"}
-Number MagentaTV_ChCode    "Channel Code"    {channel="magentatv:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:status#channelCode"}
-String MagentaTV_PlayMode  "Play Mode"       {channel="magentatv:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:status#playMode"}
-String MagentaTV_RunStatus "Run Status"      {channel="magentatv:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:status#runStatus"}
+Number MagentaTV_Channel   "Channel"         {channel="magentatv:receiver:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:status#channel"}
+Number MagentaTV_ChCode    "Channel Code"    {channel="magentatv:receiver:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:status#channelCode"}
+String MagentaTV_PlayMode  "Play Mode"       {channel="magentatv:receiver:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:status#playMode"}
+String MagentaTV_RunStatus "Run Status"      {channel="magentatv:receiver:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:status#runStatus"}
 ```
 
 ### sitemap
